@@ -1,5 +1,4 @@
 CPP=clang++
-LATEROPTS=-Wall -Wextra
 CPPOPTS=-std=c++11 -Wall -Wextra -Wfatal-errors
 FRAMEWORKS=-framework CoreFoundation -framework ImageIO -framework QuickLook
 

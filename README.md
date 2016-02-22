@@ -53,4 +53,4 @@ make
 
 ## License
 
-MIT © [Ingve Vormestrand](http://https://github.com/ingve)
+MIT © 2016 [Ingve Vormestrand](https://github.com/ingve)
