@@ -8,22 +8,24 @@ Wafer-thin wrapper around the QuickLook `QLThumbnailImageCreate()` API.
 
 ```
 $ git clone [...]
-cd ql-thumbnail
-make
+$ cd ql-thumbnail
+$ make
 ```
 
 ## Usage
 
 ```
-./ql-thumbnail <sourcefile> <destination_thumbnailfile> <type> <width> <height>
+./ql-thumbnail <sourcefile> <destination_thumbnailfile> <type> <width> <height> [quality]
 ./ql-thumbnail image.pdf image.png public.png 1024 1024
 ./ql-thumbnail sourcecode.cpp thumbnails/sourcecode.png public.jpeg 128 512
+./ql-thumbnail nasa.jpg nasa-thumb.jpg public.jpeg 128 128 0.1
 ```
 
 ### Notes
 
 - Size (width/height) values are upper bounds. A smaller thumbnail might be returned.
 - Destination folder for output thumbnail image must exist.
+- Quality parameter is optional, defaults to 1.0 (no compression).
 
 ### Supported output formats
 
