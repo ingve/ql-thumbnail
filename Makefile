@@ -1,9 +1,9 @@
-CPP=clang++
-CPPOPTS=-std=c++11 -Wall -Wextra -Wfatal-errors
+CXX=clang++
+CXXOPTS=-std=c++11 -Wall -Wextra -Wfatal-errors
 FRAMEWORKS=-framework CoreFoundation -framework ImageIO -framework QuickLook
 
 all:
-	$(CPP) $(CPPOPTS) -o ql-thumbnail ql-thumbnail.cpp $(FRAMEWORKS)
+	$(CXX) $(CXXOPTS) -o ql-thumbnail ql-thumbnail.cpp $(FRAMEWORKS)
 
 clean:
 	$(RM) ql-thumbnail
