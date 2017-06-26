@@ -2,6 +2,7 @@
 #include <QuickLook/QuickLook.h>
 #include <string>
 #include <cassert>
+#include <cstdlib>
 #include <iostream>
 
 class Thumbnail {
@@ -66,7 +67,7 @@ bool Thumbnail::save(const std::string& thumbnail_name, const std::string& type,
 }
 
 int main(int argc, char *argv[]) {
-
+  bool res = false;
   if (argc >= 6) {
     std::string src {argv[1]};
     std::string dest {argv[2]};
@@ -77,7 +78,7 @@ int main(int argc, char *argv[]) {
     unsigned int height = std::stoi(height_str);
     Thumbnail thumbnail {src};
     float quality = (argc == 7) ? std::stof(argv[6]) : 1.0f;
-    bool res = thumbnail.save(dest, type, width, height, quality);
+    res = thumbnail.save(dest, type, width, height, quality);
     if (!res) {
       std::cerr << "Error generating thumbnail" << std::endl;
     }
@@ -86,5 +87,5 @@ int main(int argc, char *argv[]) {
     std::string binary {argv[0]};
     std::cout << "Usage:\n" + binary + " source destination type width height [quality]" << std::endl;
   }
-  return 0;
+  return res ? EXIT_SUCCESS : EXIT_FAILURE;
 }
